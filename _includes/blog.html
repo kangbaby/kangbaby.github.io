@@ -1,0 +1,497 @@
+
+
+    <script src="http://www.xuanmomo.com/wp-content/themes/xuanmo/js/jquery-2.1.4.min.js"></script>
+    <link rel="stylesheet" href="http://www.xuanmomo.com/wp-content/themes/xuanmo/css/article.css">
+    <script src="http://www.xuanmomo.com/wp-content/themes/xuanmo/js/qrcode.js"></script>
+    <!-- header end -->
+    <section>
+        <div class="wrap clearfix">
+            <article class="fl single-article">
+                <div class="breadcrumbs">
+                    <span>当前位置：</span>
+                    <a href="http://www.xuanmomo.com">首页</a> &gt; <a href="http://www.xuanmomo.com/category/notes">笔记</a> &gt; <a href="http://www.xuanmomo.com/category/notes/css3">CSS3</a> &gt; <span>正文</span>
+                </div>
+                <div class="header">
+                    <a href="http://www.xuanmomo.com/1417.html"><h2>css3 animation动画笔记</h2></a>
+                    <a href="http://www.xuanmomo.com/author/xuanmo" title="由xuanmo发布" rel="author">xuanmo</a> <span>发布于</span>
+                    <time>2016-11-20 23:38</time>
+                    <span>分类:</span>
+                    <a href="#">CSS3</a>
+                    <span class="iconfont icon-comment1">2</span>
+                    <span class="iconfont icon-eye-open">240</span>
+                </div>
+                <div class="content">
+                    <ol>
+                        <h2>animation复合属性</h2>
+                        <p><i class="iconfont icon-home2" style="color: #f00;"></i>animation-name: 规定动画名称；
+                            <br />
+                            <i class="iconfont icon-home2" style="color: #f00;"></i>animation-duration: 动画执行完成所需时间，单位s；
+                            <br />
+                            <i class="iconfont icon-home2" style="color: #f00;"></i>animation-timing-function: 动画运动曲线，默认为ease；
+                            <br /> &nbsp;&nbsp;
+                            <i class="iconfont icon-fire" style="font-size: 16px; color: #16c0f8;"></i>animation-timing-function:linear（匀速）
+                            <br /> &nbsp;&nbsp;
+                            <i class="iconfont icon-fire" style="font-size: 16px; color: #16c0f8;"></i>animation-timing-function:ease（慢速开始，然后加快，慢速结束）
+                            <br /> &nbsp;&nbsp;
+                            <i class="iconfont icon-fire" style="font-size: 16px; color: #16c0f8;"></i>animation-timing-function:ease-in（慢速开始）
+                            <br /> &nbsp;&nbsp;
+                            <i class="iconfont icon-fire" style="font-size: 16px; color: #16c0f8;"></i>animation-timing-function:ease-out（慢速结束）
+                            <br /> &nbsp;&nbsp;
+                            <i class="iconfont icon-fire" style="font-size: 16px; color: #16c0f8;"></i>animation-timing-function:ease-in-out（慢速开始，慢速结束）
+                            <br /> &nbsp;&nbsp;
+                            <i class="iconfont icon-fire" style="font-size: 16px; color: #16c0f8;"></i>animation-timing-function:cubic-bezier（cubic-bezier函数中自定义值）
+                            <br />
+                            <i class="iconfont icon-home2" style="color: #f00;"></i>animation-delay: 规定是否延迟执行，默认为0；
+                            <br />
+                            <i class="iconfont icon-home2" style="color: #f00;"></i>animation-iteration-count: 动画执行次数；
+                            <br /> &nbsp;&nbsp;
+                            <i class="iconfont icon-fire" style="font-size: 16px; color: #16c0f8;"></i>animation-iteration-count: 1（一次）
+                            <br /> &nbsp;&nbsp;
+                            <i class="iconfont icon-fire" style="font-size: 16px; color: #16c0f8;"></i>animation-iteration-count: infinite（无限循环）
+                            <br />
+                            <i class="iconfont icon-home2" style="color: #f00;"></i>animation-direction: 动画是否逆向播放，默认normal；
+                            <br /> &nbsp;&nbsp;
+                            <i class="iconfont icon-fire" style="font-size: 16px; color: #16c0f8;"></i>animation-direction: normal（默认值不反向）
+                            <br /> &nbsp;&nbsp;
+                            <i class="iconfont icon-fire" style="font-size: 16px; color: #16c0f8;"></i>animation-direction: alternate（反向）
+                            <br />
+                            <i class="iconfont icon-home2" style="color: #f00;"></i>animation-play-state: 动画执行状态；paused(暂停) | runing(运行)
+                            <br />
+                            <i class="iconfont icon-home2" style="color: #f00;"></i>animation-fill-mode: 动画执行完成的状态；
+                            <br /> &nbsp;&nbsp;
+                            <i class="iconfont icon-fire" style="font-size: 16px; color: #16c0f8;"></i>animation-fill-mode: none（无动作）
+                            <br /> &nbsp;&nbsp;
+                            <i class="iconfont icon-fire" style="font-size: 16px; color: #16c0f8;"></i>animation-fill-mode: forwards（停留在执行完成的最后一帧）
+                            <br /> &nbsp;&nbsp;
+                            <i class="iconfont icon-fire" style="font-size: 16px; color: #16c0f8;"></i>animation-fill-mode: backwards（返回起始位置）
+                            <br /> &nbsp;&nbsp;
+                            <i class="iconfont icon-fire" style="font-size: 16px; color: #16c0f8;"></i>animation-fill-mode: both（向前、向后填充模式都被应用）</p>
+                        <p><i class="iconfont icon-home2" style="color: #f00;"></i>@keyframes name{} 执行动画；
+                            <br /> &nbsp;&nbsp;
+                            <i class="iconfont icon-fire" style="font-size: 16px; color: #16c0f8;"></i>第一种：</p>
+                        <div class="codecolorer-container php default" style="overflow:auto;white-space:nowrap;width:800px;">
+                            <table cellspacing="0" cellpadding="0">
+                                <tbody>
+                                    <tr>
+                                        <td class="line-numbers">
+                                            <div>1
+                                                <br />2
+                                                <br />3
+                                                <br />4
+                                                <br />5
+                                                <br />6
+                                                <br />7
+                                                <br />8
+                                                <br />
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="php codecolorer"><span class="sy0">@</span>keyframes name<span class="br0">&#123;</span>
+                                                <br /> from
+                                                <span class="br0">&#123;</span>
+                                                <br /> width
+                                                <span class="sy0">:</span> 10px<span class="sy0">;</span>
+                                                <br />
+                                                <span class="br0">&#125;</span>
+                                                <br /> to
+                                                <span class="br0">&#123;</span>
+                                                <br /> width
+                                                <span class="sy0">:</span> 50px<span class="sy0">;</span>
+                                                <br />
+                                                <span class="br0">&#125;</span>
+                                                <br />
+                                                <span class="br0">&#125;</span></div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <p>&nbsp;&nbsp;<i class="iconfont icon-fire" style="font-size: 16px; color: #16c0f8;"></i>第二种：</p>
+                        <div class="codecolorer-container php default" style="overflow:auto;white-space:nowrap;width:800px;">
+                            <table cellspacing="0" cellpadding="0">
+                                <tbody>
+                                    <tr>
+                                        <td class="line-numbers">
+                                            <div>1
+                                                <br />2
+                                                <br />3
+                                                <br />4
+                                                <br />5
+                                                <br />6
+                                                <br />7
+                                                <br />8
+                                                <br />9
+                                                <br />10
+                                                <br />11
+                                                <br />12
+                                                <br />13
+                                                <br />14
+                                                <br />
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="php codecolorer"><span class="sy0">@</span>keyframes name<span class="br0">&#123;</span>
+                                                <br />
+                                                <span class="nu0">10</span><span class="sy0">%</span><span class="br0">&#123;</span>
+                                                <br /> width
+                                                <span class="sy0">:</span> 10px<span class="sy0">;</span>
+                                                <br />
+                                                <span class="br0">&#125;</span>
+                                                <br />
+                                                <span class="nu0">30</span><span class="sy0">%</span><span class="br0">&#123;</span>
+                                                <br /> width
+                                                <span class="sy0">:</span> 40px<span class="sy0">;</span>
+                                                <br />
+                                                <span class="br0">&#125;</span>
+                                                <br />
+                                                <span class="nu0">60</span><span class="sy0">%</span><span class="br0">&#123;</span>
+                                                <br /> width
+                                                <span class="sy0">:</span> 80px<span class="sy0">;</span>
+                                                <br />
+                                                <span class="br0">&#125;</span>
+                                                <br />
+                                                <span class="nu0">100</span><span class="sy0">%</span><span class="br0">&#123;</span>
+                                                <br /> width
+                                                <span class="sy0">:</span> 50px<span class="sy0">;</span>
+                                                <br />
+                                                <span class="br0">&#125;</span>
+                                                <br />
+                                                <span class="br0">&#125;</span></div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <h2>animation各浏览器兼容</h2>
+                        <p><img class="alignnone size-full wp-image-1420" src="http://www.xuanmomo.com/wp-content/uploads/2016/11/animation.png" alt="animation" width="1261" height="456" srcset="http://www.xuanmomo.com/wp-content/uploads/2016/11/animation.png 1261w, http://www.xuanmomo.com/wp-content/uploads/2016/11/animation-300x108.png 300w, http://www.xuanmomo.com/wp-content/uploads/2016/11/animation-768x278.png 768w, http://www.xuanmomo.com/wp-content/uploads/2016/11/animation-1024x370.png 1024w" sizes="(max-width: 1261px) 100vw, 1261px" /></p>
+                        <p><a class="case-show" href="http://www.xuanmomo.com/html/animation.html" target="_blank">DEMO展示</a></p>
+                </div>
+                <p class="like">
+                    <a href="javascript:;" data-action="ding" data-id="1417" class="favorite">
+                        <i class="iconfont icon-thumbs-up2"></i>赞
+                        <span class="count">
+                        11                    </span>
+                    </a>
+                </p>
+                <p class="share">
+                    分享到：
+                    <a href="http://connect.qq.com/widget/shareqq/index.html?url=http://www.xuanmomo.com/%3Fp%3D1417&title=【css3 animation动画笔记 | Xuanmo Blog】&summary=" class="qq" target="blank" title="分享到QQ好友"></a>
+                    <a href="http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://www.xuanmomo.com/%3Fp%3D1417&title=【css3 animation动画笔记 | Xuanmo Blog】&summary=" class="qqzone" target="blank" title="分享到QQ空间"></a>
+                    <a href="javascript:;" class="wechat" title="分享到微信">
+                        <span id="qrcode">
+                        <i class="iconfont icon-close1"></i>
+                        <strong>分享到朋友圈</strong>
+                        <i>
+                            打开微信，点击底部的“发现”，<br />
+                            使用“扫一扫”即可将网页分享至朋友圈。
+                        </i>
+                    </span>
+                    </a>
+                    <a href="http://service.weibo.com/share/share.php?url=http://www.xuanmomo.com/%3Fp%3D1417%230-tsina-1-21107-397232819ff9a47a7b7e80a40613cfe1&title=【css3 animation动画笔记 | Xuanmo Blog】&appkey=1343713053&searchPic=true#_loginLayer_1473259217614" class="sina" target="blank" title="分享到新浪微博"></a>
+                    <a href="http://tieba.baidu.com/f/commit/share/openShareApi?url=http://www.xuanmomo.com/1417.html&title=css3 animation动画笔记 | Xuanmo Blog&desc=&comment=" class="baidu" target="blank" title="分享到百度贴吧"></a>
+                </p>
+                <!-- 标签开始 -->
+                <p class="mark">
+                    <strong class="iconfont icon-tag"></strong> <a href="http://www.xuanmomo.com/tag/animation" rel="tag">animation</a> </p>
+                <!-- 标签结束 -->
+                <!-- 作者简介开始 -->
+                <div class="article-about-author">
+                    <img alt='' src='http://gravatar.xuanmomo.com/avatar/e23ec1e35258fae6b137b8f71c023bbb?s=60&#038;d=identicon&#038;r=g' srcset='http://gravatar.xuanmomo.com/avatar/e23ec1e35258fae6b137b8f71c023bbb?s=120&amp;d=identicon&amp;r=g 2x' class='avatar avatar-60 photo' height='60' width='60' />
+                    <h2>作者专栏：xuanmo</h2>
+                    <!-- 作者名字 -->
+                    <p>前端爱好者，有颗爱学习的心，喜欢结交朋友，如果觉得我第一印象不错，欢迎和我成为朋友。</p>
+                    <p class="share-btn">
+                        <a href="http://www.xuanmomo.com"><i class="iconfont icon-home2"></i>博客</a>
+                        <a href="http://wpa.qq.com/msgrd?v=3&uin=993901865&site=qq&menu=yes" target="_blank"><i class="iconfont icon-qq"></i>QQ</a>
+                        <a href="javascript:;">
+                            <i class="iconfont icon-wechat"></i>微信
+                            <span class="wechat-num">
+                            微信号：xuanmo_web                            <img src="http://www.xuanmomo.com/wp-content/uploads/2016/09/xuanmo_wechat.jpg" width="100%" alt="xuanmo微信" />
+                            <i class="iconfont icon-close1"></i>
+                        </span>
+                        </a>
+                        <a href="http://weibo.com/xuanmos" target="_blank"><i class="iconfont icon-sina"></i>微博</a>
+                        <a href="mailto:me@xuanmomo.com?subject=Hello Xuanmo Blog"><i class="iconfont icon-email2"></i>邮箱</a>
+                    </p>
+                </div>
+                <!-- 作者简介结束 -->
+                <div id="comments" class="comments-area">
+                    <!-- 评论输入框 -->
+                    <div id="respond" class="comment-respond">
+                        <h3 id="reply-title" class="comment-reply-title">发表评论 <small><a rel="nofollow" id="cancel-comment-reply-link" href="/1417.html#respond" style="display:none;">取消回复</a></small></h3>
+                        <form action="http://www.xuanmomo.com/wp-comments-post.php" method="post" id="commentform" class="comment-form">
+                            <p class="comment-notes"><span id="email-notes">电子邮件地址不会被公开。</span> 必填项已用<span class="required">*</span>标注</p>
+                            <p class="smiley">
+                                <a href="javascript:grin('/流汗')">
+                                    <img src="http://www.xuanmomo.com/wp-includes/images/smilies/icon_question.gif" alt="流汗" />
+                                </a>
+                                <a href="javascript:grin('/色')">
+                                    <img src="http://www.xuanmomo.com/wp-includes/images/smilies/icon_razz.gif" alt="色" />
+                                </a>
+                                <a href="javascript:grin('/难过')">
+                                    <img src="http://www.xuanmomo.com/wp-includes/images/smilies/icon_sad.gif" alt="难过" />
+                                </a>
+                                <a href="javascript:grin('/闭嘴')">
+                                    <img src="http://www.xuanmomo.com/wp-includes/images/smilies/icon_evil.gif" alt="闭嘴" />
+                                </a>
+                                <a href="javascript:grin('/吐舌头')">
+                                    <img src="http://www.xuanmomo.com/wp-includes/images/smilies/icon_exclaim.gif" alt="吐舌头" />
+                                </a>
+                                <a href="javascript:grin('/微笑')">
+                                    <img src="http://www.xuanmomo.com/wp-includes/images/smilies/icon_smile.gif" alt="微笑" />
+                                </a>
+                                <a href="javascript:grin('/可爱')">
+                                    <img src="http://www.xuanmomo.com/wp-includes/images/smilies/icon_redface.gif" alt="可爱" />
+                                </a>
+                                <a href="javascript:grin('/kiss')">
+                                    <img src="http://www.xuanmomo.com/wp-includes/images/smilies/icon_biggrin.gif" alt="kiss" />
+                                </a>
+                                <a href="javascript:grin('/惊讶')">
+                                    <img src="http://www.xuanmomo.com/wp-includes/images/smilies/icon_surprised.gif" alt="惊讶" />
+                                </a>
+                                <a href="javascript:grin('/饥饿')">
+                                    <img src="http://www.xuanmomo.com/wp-includes/images/smilies/icon_eek.gif" alt="饥饿" />
+                                </a>
+                                <a href="javascript:grin('/晕')">
+                                    <img src="http://www.xuanmomo.com/wp-includes/images/smilies/icon_confused.gif" alt="晕" />
+                                </a>
+                                <a href="javascript:grin('/酷')">
+                                    <img src="http://www.xuanmomo.com/wp-includes/images/smilies/icon_cool.gif" alt="酷" />
+                                </a>
+                                <a href="javascript:grin('/坏笑')">
+                                    <img src="http://www.xuanmomo.com/wp-includes/images/smilies/icon_lol.gif" alt="坏笑" />
+                                </a>
+                                <a href="javascript:grin('/发怒')">
+                                    <img src="http://www.xuanmomo.com/wp-includes/images/smilies/icon_mad.gif" alt="发怒" />
+                                </a>
+                                <a href="javascript:grin('/憨笑')">
+                                    <img src="http://www.xuanmomo.com/wp-includes/images/smilies/icon_twisted.gif" alt="憨笑" />
+                                </a>
+                                <a href="javascript:grin('/萌萌哒')">
+                                    <img src="http://www.xuanmomo.com/wp-includes/images/smilies/icon_rolleyes.gif" alt="萌萌哒" />
+                                </a>
+                                <a href="javascript:grin('/吃东西')">
+                                    <img src="http://www.xuanmomo.com/wp-includes/images/smilies/icon_wink.gif" alt="吃东西" />
+                                </a>
+                                <a href="javascript:grin('/色咪咪')">
+                                    <img src="http://www.xuanmomo.com/wp-includes/images/smilies/icon_idea.gif" alt="色咪咪" />
+                                </a>
+                                <a href="javascript:grin('/囧')">
+                                    <img src="http://www.xuanmomo.com/wp-includes/images/smilies/icon_arrow.gif" alt="囧" />
+                                </a>
+                                <a href="javascript:grin('/害羞')">
+                                    <img src="http://www.xuanmomo.com/wp-includes/images/smilies/icon_neutral.gif" alt="害羞" />
+                                </a>
+                                <a href="javascript:grin('/流泪')">
+                                    <img src="http://www.xuanmomo.com/wp-includes/images/smilies/icon_cry.gif" alt="流泪" />
+                                </a>
+                                <a href="javascript:grin('/你懂的')">
+                                    <img src="http://www.xuanmomo.com/wp-includes/images/smilies/icon_mrgreen.gif" alt="你懂的" />
+                                </a>
+                            </p>
+                            <p class="comment-form-comment">
+                                <textarea id="comment" name="comment" cols="70" rows="10" placeholder="留下你的脚印吧！" maxlength="65525" aria-required="true" required="required"></textarea>
+                            </p>
+                            <p class="comment-form-author">
+                                <label for="author">姓名 <span class="required">*</span></label>
+                                <input id="author" name="author" type="text" value="" size="30" maxlength="245" aria-required='true' required='required' />
+                            </p>
+                            <p class="comment-form-email">
+                                <label for="email">电子邮件 <span class="required">*</span></label>
+                                <input id="email" name="email" type="text" value="" size="30" maxlength="100" aria-describedby="email-notes" aria-required='true' required='required' />
+                            </p>
+                            <p class="comment-form-url">
+                                <label for="url">站点</label>
+                                <input id="url" name="url" type="text" value="" size="30" maxlength="200" />
+                            </p>
+                            <p class="form-submit">
+                                <input name="submit" type="submit" id="submit" class="submit" value="发表评论" />
+                                <input type='hidden' name='comment_post_ID' value='1417' id='comment_post_ID' />
+                                <input type='hidden' name='comment_parent' id='comment_parent' value='0' />
+                            </p>
+                        </form>
+                    </div>
+                    <!-- #respond -->
+                    <!-- 评论列表 -->
+                    <ol class="comment-list">
+                        <li class="comment even thread-even depth-1 parent" id="comment-286">
+                            <div id="div-comment-286" class="comment-body">
+                                <div class="comment-author vcard">
+                                    <img alt='' src='http://gravatar.xuanmomo.com/avatar/088d3ee5ca5665788be7478ebcb96a55?s=34&#038;d=identicon&#038;r=g' srcset='http://gravatar.xuanmomo.com/avatar/088d3ee5ca5665788be7478ebcb96a55?s=68&amp;d=identicon&amp;r=g 2x' class='avatar avatar-34 photo' height='34' width='34' />
+                                    <cite class="fn">Ivan</cite><span class="says">说道：</span> </div>
+                                <div class="comment-meta commentmetadata"><a href="http://www.xuanmomo.com/1417.html#comment-286">
+			2016年11月23日 11:13</a> </div>
+                                <p>厉害啊，word哥</p>
+                                <div class="reply"><a rel='nofollow' class='comment-reply-link' href='http://www.xuanmomo.com/1417.html?replytocom=286#respond' onclick='return addComment.moveForm( "div-comment-286", "286", "respond", "1417" )' aria-label='回复给Ivan'>回复</a></div>
+                            </div>
+                            <ol class="children">
+                                <li class="comment byuser comment-author-xuanmo bypostauthor odd alt depth-2" id="comment-287">
+                                    <div id="div-comment-287" class="comment-body">
+                                        <div class="comment-author vcard">
+                                            <img alt='' src='http://gravatar.xuanmomo.com/avatar/e23ec1e35258fae6b137b8f71c023bbb?s=34&#038;d=identicon&#038;r=g' srcset='http://gravatar.xuanmomo.com/avatar/e23ec1e35258fae6b137b8f71c023bbb?s=68&amp;d=identicon&amp;r=g 2x' class='avatar avatar-34 photo' height='34' width='34' />
+                                            <cite class="fn"><a href='http://www.xuanmomo.com' rel='external nofollow' class='url'>xuanmo</a></cite><span class="says">说道：</span> </div>
+                                        <div class="comment-meta commentmetadata"><a href="http://www.xuanmomo.com/1417.html#comment-287">
+			2016年11月23日 11:18</a> </div>
+                                        <p>洗刷我吧</p>
+                                        <div class="reply"><a rel='nofollow' class='comment-reply-link' href='http://www.xuanmomo.com/1417.html?replytocom=287#respond' onclick='return addComment.moveForm( "div-comment-287", "287", "respond", "1417" )' aria-label='回复给xuanmo'>回复</a></div>
+                                    </div>
+                                </li>
+                                <!-- #comment-## -->
+                            </ol>
+                            <!-- .children -->
+                        </li>
+                        <!-- #comment-## -->
+                    </ol>
+                    <!-- 评论导航 -->
+                </div>
+                <div class="tab-article clearfix">
+                    <div class="fl tab-left">
+                        <p>
+                            <!-- 上一篇： -->
+                            <a href="javascript:;">
+                            上一篇：<a href="http://www.xuanmomo.com/1303.html" rel="prev">css3 过渡transition属性</a> </a>
+                        </p>
+                    </div>
+                    <div class="tab-right fr">
+                        <p>
+                            <!-- 下一篇： -->
+                            <a href="javascript:;">
+                            没有了，已经是最后文章                        </a>
+                        </p>
+                    </div>
+                </div>
+            </article>
+            <div class="mobile-hide aside-fr fr">
+                <aside class="new-article">
+                    <ul class="list-article-title">
+                        <li>
+                            <h3>最新文章</h3>
+                        </li>
+                        <!-- 显示10篇最新更新文章 -->
+                        <li>
+                            <a href="http://www.xuanmomo.com/1417.html" title="css3 animation动画笔记">css3 animation动画笔记</a>
+                        </li>
+                        <li>
+                            <a href="http://www.xuanmomo.com/1412.html" title="手机摄影作品（二）">手机摄影作品（二）</a>
+                        </li>
+                        <li>
+                            <a href="http://www.xuanmomo.com/1404.html" title="QQ注册页面">QQ注册页面</a>
+                        </li>
+                        <li>
+                            <a href="http://www.xuanmomo.com/1388.html" title="凑个数，canvas绘制时钟">凑个数，canvas绘制时钟</a>
+                        </li>
+                        <li>
+                            <a href="http://www.xuanmomo.com/1323.html" title="Photoshop 2017 CC for Mac破解版下载">Photoshop 2017 CC for Mac破解版下载</a>
+                        </li>
+                        <li>
+                            <a href="http://www.xuanmomo.com/1316.html" title="HTML5 Video自制视频播放器">HTML5 Video自制视频播放器</a>
+                        </li>
+                        <li>
+                            <a href="http://www.xuanmomo.com/1310.html" title="HTML5 Video标签笔记">HTML5 Video标签笔记</a>
+                        </li>
+                        <li>
+                            <a href="http://www.xuanmomo.com/1303.html" title="css3 过渡transition属性">css3 过渡transition属性</a>
+                        </li>
+                        <li>
+                            <a href="http://www.xuanmomo.com/1289.html" title="文字超出显示省略号（css与js方法）">文字超出显示省略号（css与js方法）</a>
+                        </li>
+                        <li>
+                            <a href="http://www.xuanmomo.com/1260.html" title="canvas简易画板">canvas简易画板</a>
+                        </li>
+                    </ul>
+                </aside>
+                <aside>
+                    <ul class="aside-conment">
+                        <li>
+                            <h3>近期评论</h3>
+                        </li>
+                        <li class="aside-com-img" class="clearfix">
+                            <p><img alt='' src='http://gravatar.xuanmomo.com/avatar/592b1070aa50767c61f02bd432f95391?s=50&#038;d=identicon&#038;r=g' srcset='http://gravatar.xuanmomo.com/avatar/592b1070aa50767c61f02bd432f95391?s=100&amp;d=identicon&amp;r=g 2x' class='avatar avatar-50 photo' height='50' width='50' /></p> <strong class="aside-content">孤标傲世:</strong>
+                            <p><a href="http://www.xuanmomo.com/1388.html" title="查看 凑个数，canvas绘制时钟">没有看你github...</a></p>
+                        </li>
+                        <li class="aside-com-img" class="clearfix">
+                            <p><img alt='' src='http://gravatar.xuanmomo.com/avatar/592b1070aa50767c61f02bd432f95391?s=50&#038;d=identicon&#038;r=g' srcset='http://gravatar.xuanmomo.com/avatar/592b1070aa50767c61f02bd432f95391?s=100&amp;d=identicon&amp;r=g 2x' class='avatar avatar-50 photo' height='50' width='50' /></p> <strong class="aside-content">孤标傲世:</strong>
+                            <p><a href="http://www.xuanmomo.com/1388.html" title="查看 凑个数，canvas绘制时钟">哥们  你的网站不错...</a></p>
+                        </li>
+                        <li class="aside-com-img" class="clearfix">
+                            <p><img alt='' src='http://gravatar.xuanmomo.com/avatar/592b1070aa50767c61f02bd432f95391?s=50&#038;d=identicon&#038;r=g' srcset='http://gravatar.xuanmomo.com/avatar/592b1070aa50767c61f02bd432f95391?s=100&amp;d=identicon&amp;r=g 2x' class='avatar avatar-50 photo' height='50' width='50' /></p> <strong class="aside-content">第三方:</strong>
+                            <p><a href="http://www.xuanmomo.com/794.html" title="查看 before伪类与阿里图标做的图标库">你好...</a></p>
+                        </li>
+                        <li class="aside-com-img" class="clearfix">
+                            <p><img alt='' src='http://gravatar.xuanmomo.com/avatar/b4c85a04eadf366f89c37fb4197914f5?s=50&#038;d=identicon&#038;r=g' srcset='http://gravatar.xuanmomo.com/avatar/b4c85a04eadf366f89c37fb4197914f5?s=100&amp;d=identicon&amp;r=g 2x' class='avatar avatar-50 photo' height='50' width='50' /></p> <strong class="aside-content">Cerol:</strong>
+                            <p><a href="http://www.xuanmomo.com/147.html" title="查看 CSS常用命名及书写规范">我得向你看齐啊，你是...</a></p>
+                        </li>
+                        <li class="aside-com-img" class="clearfix">
+                            <p><img alt='' src='http://gravatar.xuanmomo.com/avatar/088d3ee5ca5665788be7478ebcb96a55?s=50&#038;d=identicon&#038;r=g' srcset='http://gravatar.xuanmomo.com/avatar/088d3ee5ca5665788be7478ebcb96a55?s=100&amp;d=identicon&amp;r=g 2x' class='avatar avatar-50 photo' height='50' width='50' /></p> <strong class="aside-content">Ivan:</strong>
+                            <p><a href="http://www.xuanmomo.com/1417.html" title="查看 css3 animation动画笔记">厉害啊，word哥...</a></p>
+                        </li>
+                        <li class="aside-com-img" class="clearfix">
+                            <p><img alt='' src='http://gravatar.xuanmomo.com/avatar/0f5024e93ce228117846483141e8e68a?s=50&#038;d=identicon&#038;r=g' srcset='http://gravatar.xuanmomo.com/avatar/0f5024e93ce228117846483141e8e68a?s=100&amp;d=identicon&amp;r=g 2x' class='avatar avatar-50 photo' height='50' width='50' /></p> <strong class="aside-content">屌爆了:</strong>
+                            <p><a href="http://www.xuanmomo.com/504.html" title="查看 常用十六进制颜色值">/流汗  /色  /...</a></p>
+                        </li>
+                        <li class="aside-com-img" class="clearfix">
+                            <p><img alt='' src='http://gravatar.xuanmomo.com/avatar/3973e74ed73329b21b73569a8740a23f?s=50&#038;d=identicon&#038;r=g' srcset='http://gravatar.xuanmomo.com/avatar/3973e74ed73329b21b73569a8740a23f?s=100&amp;d=identicon&amp;r=g 2x' class='avatar avatar-50 photo' height='50' width='50' /></p> <strong class="aside-content">孤标傲世:</strong>
+                            <p><a href="http://www.xuanmomo.com/521.html" title="查看 留言板">你博客的主题是什么...</a></p>
+                        </li>
+                        <li class="aside-com-img" class="clearfix">
+                            <p><img alt='' src='http://gravatar.xuanmomo.com/avatar/f5fe84b7868e804b3c315f9e4a64cf76?s=50&#038;d=identicon&#038;r=g' srcset='http://gravatar.xuanmomo.com/avatar/f5fe84b7868e804b3c315f9e4a64cf76?s=100&amp;d=identicon&amp;r=g 2x' class='avatar avatar-50 photo' height='50' width='50' /></p> <strong class="aside-content">fesugar:</strong>
+                            <p><a href="http://www.xuanmomo.com/521.html" title="查看 留言板">博主网站特效不错...</a></p>
+                        </li>
+                        <li class="aside-com-img" class="clearfix">
+                            <p><img alt='' src='http://gravatar.xuanmomo.com/avatar/5a545f3118290cab3cd41fb3977ba171?s=50&#038;d=identicon&#038;r=g' srcset='http://gravatar.xuanmomo.com/avatar/5a545f3118290cab3cd41fb3977ba171?s=100&amp;d=identicon&amp;r=g 2x' class='avatar avatar-50 photo' height='50' width='50' /></p> <strong class="aside-content">增达网:</strong>
+                            <p><a href="http://www.xuanmomo.com/1388.html" title="查看 凑个数，canvas绘制时钟">你的博客就像冬天里的...</a></p>
+                        </li>
+                        <li class="aside-com-img" class="clearfix">
+                            <p><img alt='' src='http://gravatar.xuanmomo.com/avatar/8f126ad3169c30735ff51a60561edd92?s=50&#038;d=identicon&#038;r=g' srcset='http://gravatar.xuanmomo.com/avatar/8f126ad3169c30735ff51a60561edd92?s=100&amp;d=identicon&amp;r=g 2x' class='avatar avatar-50 photo' height='50' width='50' /></p> <strong class="aside-content">网站:</strong>
+                            <p><a href="http://www.xuanmomo.com/29.html" title="查看 关于轩陌-Personal profile">/可爱  /微笑...</a></p>
+                        </li>
+                    </ul>
+                </aside>
+                <aside class="tag-cloud">
+                    <ul class="aside-conment">
+                        <li>
+                            <h3>标签云</h3>
+                        </li>
+                        <a href='http://www.xuanmomo.com/tag/bootstrap' class='tag-link-27 tag-link-position-1' title='3个话题' style='font-size: 10pt;'>bootstrap</a>
+                        <a href='http://www.xuanmomo.com/tag/bootstrap%e7%b1%bb%e5%90%8d%e5%a4%a7%e5%85%a8' class='tag-link-47 tag-link-position-2' title='1个话题' style='font-size: 10pt;'>bootstrap类名大全</a>
+                        <a href='http://www.xuanmomo.com/tag/canvas' class='tag-link-40 tag-link-position-3' title='3个话题' style='font-size: 10pt;'>canvas</a>
+                        <a href='http://www.xuanmomo.com/tag/canvas%e7%8e%af%e5%bd%a2%e8%bf%9b%e5%ba%a6%e6%9d%a1' class='tag-link-41 tag-link-position-4' title='1个话题' style='font-size: 10pt;'>canvas环形进度条</a>
+                        <a href='http://www.xuanmomo.com/tag/css' class='tag-link-15 tag-link-position-5' title='6个话题' style='font-size: 10pt;'>css</a>
+                        <a href='http://www.xuanmomo.com/tag/css3' class='tag-link-30 tag-link-position-6' title='4个话题' style='font-size: 10pt;'>css3</a>
+                        <a href='http://www.xuanmomo.com/tag/css%e8%b6%85%e5%87%ba%e6%98%be%e7%a4%ba%e7%9c%81%e7%95%a5%e5%8f%b7' class='tag-link-54 tag-link-position-7' title='1个话题' style='font-size: 10pt;'>css超出显示省略号</a>
+                        <a href='http://www.xuanmomo.com/tag/demo' class='tag-link-20 tag-link-position-8' title='14个话题' style='font-size: 10pt;'>demo</a>
+                        <a href='http://www.xuanmomo.com/tag/float' class='tag-link-25 tag-link-position-9' title='1个话题' style='font-size: 10pt;'>float</a>
+                        <a href='http://www.xuanmomo.com/tag/html' class='tag-link-13 tag-link-position-10' title='4个话题' style='font-size: 10pt;'>html</a>
+                        <a href='http://www.xuanmomo.com/tag/html5' class='tag-link-18 tag-link-position-11' title='1个话题' style='font-size: 10pt;'>html5</a>
+                        <a href='http://www.xuanmomo.com/tag/iconfont' class='tag-link-57 tag-link-position-12' title='2个话题' style='font-size: 10pt;'>iconfont</a>
+                        <a href='http://www.xuanmomo.com/tag/js' class='tag-link-23 tag-link-position-13' title='15个话题' style='font-size: 10pt;'>JavaScript</a>
+                        <a href='http://www.xuanmomo.com/tag/javascript%e6%ad%a3%e5%88%99%e8%a1%a8%e8%be%be%e5%bc%8f' class='tag-link-44 tag-link-position-14' title='1个话题' style='font-size: 10pt;'>JavaScript正则表达式</a>
+                        <a href='http://www.xuanmomo.com/tag/jquery%e6%8f%92%e4%bb%b6' class='tag-link-42 tag-link-position-15' title='1个话题' style='font-size: 10pt;'>jQuery插件</a>
+                        <a href='http://www.xuanmomo.com/tag/json' class='tag-link-31 tag-link-position-16' title='1个话题' style='font-size: 10pt;'>json</a>
+                        <a href='http://www.xuanmomo.com/tag/table' class='tag-link-38 tag-link-position-17' title='1个话题' style='font-size: 10pt;'>table</a>
+                        <a href='http://www.xuanmomo.com/tag/tips' class='tag-link-17 tag-link-position-18' title='7个话题' style='font-size: 10pt;'>tips</a>
+                        <a href='http://www.xuanmomo.com/tag/wordpress' class='tag-link-34 tag-link-position-19' title='1个话题' style='font-size: 10pt;'>WordPress</a>
+                        <a href='http://www.xuanmomo.com/tag/wordpress%e5%bb%ba%e7%ab%99' class='tag-link-48 tag-link-position-20' title='1个话题' style='font-size: 10pt;'>wordpress建站</a>
+                        <a href='http://www.xuanmomo.com/tag/%e5%85%a8%e5%b1%8f%e6%bb%9a%e5%8a%a8' class='tag-link-43 tag-link-position-21' title='1个话题' style='font-size: 10pt;'>全屏滚动</a>
+                        <a href='http://www.xuanmomo.com/tag/%e5%91%bd%e5%90%8d%e8%a7%84%e8%8c%83' class='tag-link-19 tag-link-position-22' title='1个话题' style='font-size: 10pt;'>命名规范</a>
+                        <a href='http://www.xuanmomo.com/tag/%e5%bf%ab%e9%80%9f%e5%bb%ba%e7%ab%99' class='tag-link-49 tag-link-position-23' title='1个话题' style='font-size: 10pt;'>快速建站</a>
+                        <a href='http://www.xuanmomo.com/tag/%e6%89%8b%e6%9c%ba%e6%91%84%e5%bd%b1' class='tag-link-46 tag-link-position-24' title='2个话题' style='font-size: 10pt;'>手机摄影</a>
+                        <a href='http://www.xuanmomo.com/tag/%e6%97%a0%e5%ba%8f%e5%88%97%e8%a1%a8' class='tag-link-39 tag-link-position-25' title='1个话题' style='font-size: 10pt;'>无序列表</a>
+                        <a href='http://www.xuanmomo.com/tag/%e6%97%a0%e7%bc%9d%e6%bb%9a%e5%8a%a8' class='tag-link-36 tag-link-position-26' title='1个话题' style='font-size: 10pt;'>无缝滚动</a>
+                        <a href='http://www.xuanmomo.com/tag/%e7%a7%bb%e5%8a%a8%e7%ab%af' class='tag-link-26 tag-link-position-27' title='1个话题' style='font-size: 10pt;'>移动端</a>
+                        <a href='http://www.xuanmomo.com/tag/%e7%ac%94%e8%ae%b0' class='tag-link-14 tag-link-position-28' title='26个话题' style='font-size: 10pt;'>笔记</a>
+                        <a href='http://www.xuanmomo.com/tag/%e8%bd%af%e4%bb%b6%e5%88%86%e4%ba%ab' class='tag-link-21 tag-link-position-29' title='2个话题' style='font-size: 10pt;'>软件分享</a>
+                        <a href='http://www.xuanmomo.com/tag/%e9%a2%9c%e8%89%b2%e9%80%9f%e8%ae%b0' class='tag-link-24 tag-link-position-30' title='1个话题' style='font-size: 10pt;'>颜色速记</a> </ul>
+                </aside>
+            </div>
+        </div>
+        <div class="cover">
+            <div class="cover-img"></div>
+            <div class="cover-hide"></div>
+            <i class="iconfont icon-menu-left"></i>
+            <i class="iconfont icon-menu-right"></i>
+            <em class="iconfont icon-close1"></em>
+            <p>已经没有了！</p>
+        </div>
+    </section>
+ 

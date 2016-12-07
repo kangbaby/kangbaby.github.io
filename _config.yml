@@ -1,0 +1,13 @@
+# Site settings
+title: yuanSnowBoy Blog
+SEOTitle: 宝远的博客 | yuanSnowBoy Blog
+header-img: img/home-bg.jpg
+email: yuanSnowBoy@163.com
+description: "关于前端与设计、nodeJS | 葛宝远，Web & Mobile Lover，Front-End Engineer，nodeJS  | 这里是 @葛宝远 的个人博客，与你一起发现更大的世界。"
+keyword: "葛宝远, 宝远, yuan, baoyuan, gebaoyuan, yuanSnowBoy, 宝远的博客, yuanSnowBoy Blog, 博客, 个人网站, 互联网, 前端, 设计, nodeJS"
+#url: "https://gebaoyuan.me"              # your host, for absolute URL
+baseurl: ""                             # for example, '/blog' if your blog hosted on 'host/blog'
+
+
+# 每一页显示的文章数
+paginate: 6

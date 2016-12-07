@@ -1,0 +1,30 @@
+{% for post in site.posts %}
+	<article id="" class="mobile-article-lg">
+	    <a href="{{ site.baseurl }}{{ post.url }}" class="article-img">
+	    <img src="http://www.xuanmomo.com/wp-content/uploads/2016/05/iconfont-2-332x200.png" class="attachment-post-thumbnail size-post-thumbnail wp-post-image"/>
+	    </a>
+	    <div class="con">
+	        <h2 class="article-title">
+	            <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
+	        </h2>
+	        <div class="time">
+	            <time class="ccc">{{ post.date |  date: "%F" }}</time>
+	            <!-- 评论数 -->
+	            <span class="iconfont">&#xe64d;</span>
+	            <span class="iconfont icon-comment1 ccc">16</span>
+	            <!-- 阅读数 -->
+	            <span class="iconfont">&#xe620;</span>
+	            <span class="iconfont icon-eye-open ccc">1152</span>
+	            <!-- 点赞 -->
+	            <span class="iconfont">&#xe600;</span>
+	            <span data-action="ding" data-id="794" class="cur ccc favorite">
+	            <span class="iconfont icon-thumbs-up2"></span>
+	            <span class="count">18</span>
+	            </span>
+	        </div>
+	        <!-- 摘要 -->
+	        <p>测试 {{ post.content | strip_html | truncate:100 }}</p>
+	        <a href="{{ site.baseurl }}{{ post.url }}" class="article-more">阅&nbsp;读</a>
+	    </div>
+	</article>
+{% endfor %}
